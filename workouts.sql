@@ -1,5 +1,5 @@
 WITH avg_bonus_department AS
-    (SELECT department, AVG(bonus) AS average_bonus
+    (SELECT department, AVG(bonus) AS average_bonus_per_employee
     FROM employees
     GROUP BY department),
     above_average AS
