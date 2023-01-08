@@ -3,14 +3,14 @@ WITH avg_bonus_department AS
     FROM employees
     GROUP BY department),
     above_average AS
-    (SELECT e.department, count(*) AS employees_above_average
+    (SELECT e.department, count(*) AS employees_with_above_average_bonus
      FROM employees e
      JOIN avg_bonus_department avg
      ON e.department = avg.department
      WHERE bonus > average_bonus
      GROUP BY e.department),
      below_average AS
-     (SELECT e.department, count(*) AS employees_below_average
+     (SELECT e.department, count(*) AS employees_with_below_average_bonus
      FROM employees e
      JOIN avg_bonus_department avg
      ON e.department = avg.department
